@@ -1,0 +1,11 @@
+C:\Users\andre\source\repos\figura_4\figura_4\bin\Debug\fig_5.exe.config
+C:\Users\andre\source\repos\figura_4\figura_4\bin\Debug\fig_5.exe
+C:\Users\andre\source\repos\figura_4\figura_4\bin\Debug\fig_5.pdb
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.exe.config
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\figura_4.Form1.resources
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.Properties.Resources.resources
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.csproj.GenerateResource.cache
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.exe
+C:\Users\andre\source\repos\figura_4\figura_4\obj\Debug\fig_5.pdb

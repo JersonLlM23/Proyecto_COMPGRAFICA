@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\JERSON\\Documents\\Ingenier\u00EDaSW\\Programaci\u00F3n\\C#\\Computacion_Grafica\\PROYECTO\\ProyectoP1_Figura2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\",
+  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|c:\\users\\jerson\\documents\\ingenier\u00EDasw\\programaci\u00F3n\\c#\\computacion_grafica\\proyecto\\proyectop1_figura2_llumiquingam_v1.0.0\\fig1_2_proyecto_parcial1\\figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|solutionrelative:figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|solutionrelative:figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|c:\\users\\jerson\\documents\\ingenier\u00EDasw\\programaci\u00F3n\\c#\\computacion_grafica\\proyecto\\proyectop1_figura2_llumiquingam_v1.0.0\\fig1_2_proyecto_parcial1\\figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|solutionrelative:figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|c:\\users\\andre\\onedrive\\desktop\\grafica grupo\\proyecto_compgrafica\\proyectop1_figura1_2_llumiquingam_v1.0.0\\fig1_2_proyecto_parcial1\\figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F0EE08CA-20F5-4BC2-9B64-2B0787C6762E}|Fig1_2_proyecto_Parcial1.csproj|solutionrelative:figuras1_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,40 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Figuras1_2.cs",
-              "DocumentMoniker": "C:\\Users\\JERSON\\Documents\\Ingenier\u00EDaSW\\Programaci\u00F3n\\C#\\Computacion_Grafica\\PROYECTO\\ProyectoP1_Figura2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
               "RelativeDocumentMoniker": "Figuras1_2.cs",
-              "ToolTip": "C:\\Users\\JERSON\\Documents\\Ingenier\u00EDaSW\\Programaci\u00F3n\\C#\\Computacion_Grafica\\PROYECTO\\ProyectoP1_Figura2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
               "RelativeToolTip": "Figuras1_2.cs",
-              "ViewState": "AgIAANgDAAAAAAAAAAAuwOgDAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAOgDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T05:05:28.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Figuras1_2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\JERSON\\Documents\\Ingenier\u00EDaSW\\Programaci\u00F3n\\C#\\Computacion_Grafica\\PROYECTO\\ProyectoP1_Figura2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
+              "DocumentIndex": 1,
+              "Title": "Figuras1_2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs",
               "RelativeDocumentMoniker": "Figuras1_2.cs",
-              "ToolTip": "C:\\Users\\JERSON\\Documents\\Ingenier\u00EDaSW\\Programaci\u00F3n\\C#\\Computacion_Grafica\\PROYECTO\\ProyectoP1_Figura2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Figuras1_2.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Desktop\\grafica grupo\\Proyecto_COMPGRAFICA\\ProyectoP1_Figura1_2_LlumiquingaM_V1.0.0\\Fig1_2_proyecto_Parcial1\\Figuras1_2.cs [Design]",
+              "RelativeToolTip": "Figuras1_2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T04:33:11.709Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             }
           ]
         }

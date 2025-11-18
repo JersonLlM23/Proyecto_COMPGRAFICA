@@ -1,0 +1,209 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace figura_5
+{
+    /// <summary>
+    /// Vista principal de la aplicación
+    /// Solo maneja eventos de UI y delega la lógica al controlador
+    /// </summary>
+    public partial class Form1 : Form
+    {
+        private ControladorPoligono controlador;
+        private Bitmap bufferImagen;
+        private const float RadioPorDefecto = 100f;
+        private const float DesplazamientoTeclas = 5f;
+
+        public Form1()
+        {
+            InitializeComponent();
+            InicializarComponentes();
+        }
+
+        private void InicializarComponentes()
+        {
+            bufferImagen = new Bitmap(picCanvas.Width, picCanvas.Height);
+            
+            PointF centroCanvas = new PointF(
+                picCanvas.Width / 2f, 
+                picCanvas.Height / 2f
+            );
+            
+            controlador = new ControladorPoligono(RadioPorDefecto, centroCanvas);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtRadio.Text = RadioPorDefecto.ToString();
+            ActualizarInstrucciones();
+        }
+
+        private void ActualizarInstrucciones()
+        {
+            lblMovimiento.Text = "Flechas ← → para rotar\n" +
+                                "Flechas ↑ ↓ para mover arriba/abajo\n" +
+                                "Shift + ← → para mover izquierda/derecha";
+        }
+
+        private void btnGraficar_Click(object sender, EventArgs e)
+        {
+            if (ValidarYObtenerRadio(out float nuevoRadio))
+            {
+                controlador.EstablecerRadio(nuevoRadio);
+                ActualizarCanvas();
+            }
+            else
+            {
+                MostrarMensajeError("Por favor ingresa un valor numérico válido.");
+            }
+        }
+
+        private void btnResetear_Click(object sender, EventArgs e)
+        {
+            controlador.Resetear();
+            trackBarEscala.Value = 100;
+            txtRadio.Text = RadioPorDefecto.ToString();
+            LimpiarCanvas();
+        }
+
+        private void btnGiroAntihorario_Click(object sender, EventArgs e)
+        {
+            controlador.RotarAntihorario();
+            ActualizarCanvas();
+        }
+
+        private void btnGiroHorario_Click(object sender, EventArgs e)
+        {
+            controlador.RotarHorario();
+            ActualizarCanvas();
+        }
+
+        private void trackBarEscala_Scroll(object sender, EventArgs e)
+        {
+            float escala = trackBarEscala.Value / 100.0f;
+            controlador.EstablecerEscala(escala);
+            ActualizarCanvas();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (controlador.RetrocederPaso())
+            {
+                ActualizarCanvas();
+            }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (controlador.AvanzarPaso())
+            {
+                ActualizarCanvas();
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            bool actualizado = false;
+
+            // Verificar si Shift está presionado
+            bool shiftPresionado = e.Shift;
+
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    if (shiftPresionado)
+                    {
+                        // Shift + Izquierda = Mover a la izquierda
+                        controlador.Mover(-DesplazamientoTeclas, 0);
+                    }
+                    else
+                    {
+                        // Izquierda = Rotar antihorario
+                        controlador.RotarAntihorario();
+                    }
+                    actualizado = true;
+                    break;
+
+                case Keys.Right:
+                    if (shiftPresionado)
+                    {
+                        // Shift + Derecha = Mover a la derecha
+                        controlador.Mover(DesplazamientoTeclas, 0);
+                    }
+                    else
+                    {
+                        // Derecha = Rotar horario
+                        controlador.RotarHorario();
+                    }
+                    actualizado = true;
+                    break;
+
+                case Keys.Up:
+                    // Arriba = Mover arriba
+                    controlador.Mover(0, -DesplazamientoTeclas);
+                    actualizado = true;
+                    break;
+
+                case Keys.Down:
+                    // Abajo = Mover abajo
+                    controlador.Mover(0, DesplazamientoTeclas);
+                    actualizado = true;
+                    break;
+            }
+            
+            if (actualizado)
+            {
+                ActualizarCanvas();
+                e.Handled = true; // Evitar procesamiento adicional de la tecla
+            }
+        }
+
+        private void picCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            if (bufferImagen != null)
+            {
+                e.Graphics.DrawImage(bufferImagen, 0, 0);
+            }
+        }
+
+        #region Métodos Auxiliares
+
+        private bool ValidarYObtenerRadio(out float radio)
+        {
+            return float.TryParse(txtRadio.Text, out radio) && radio > 0;
+        }
+
+        private void MostrarMensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void LimpiarCanvas()
+        {
+            using (Graphics g = Graphics.FromImage(bufferImagen))
+            {
+                g.Clear(Color.White);
+            }
+            picCanvas.Invalidate();
+        }
+
+        private void ActualizarCanvas()
+        {
+            using (Graphics canvas = Graphics.FromImage(bufferImagen))
+            {
+                canvas.Clear(Color.White);
+                controlador.Renderizar(canvas);
+            }
+            picCanvas.Invalidate();
+        }
+
+        #endregion
+    }
+}

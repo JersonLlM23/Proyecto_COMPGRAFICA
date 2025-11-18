@@ -1,0 +1,177 @@
+﻿# Documentación de la Estructura del Código - figura_4
+
+## Resumen General
+El proyecto ha sido refactorizado siguiendo principios de diseño orientado a objetos y buenas prácticas de organización de código.
+
+---
+
+## Estructura de Archivos
+
+### 1. **FiguraGeometrica.cs**
+Clase responsable de toda la lógica geométrica y de dibujo.
+
+#### Regiones de la Clase:
+
+##### **#region Propiedades**
+- `Radio`: Radio base del polígono
+- `AnguloRotacion`: Ángulo de rotación actual en radianes
+- `Escala`: Factor de escala (0.1 a 2.0)
+- `NivelDibujo`: Nivel de dibujo paso a paso (0-5)
+
+##### **#region Constantes**
+- `NUMERO_HEXAGONOS = 6`: Cantidad de hexágonos externos
+- `NUMERO_VERTICES = 6`: Vértices por hexágono
+- `NUMERO_ANILLOS = 5`: Anillos concéntricos
+
+##### **#region Constructor**
+- `FiguraGeometrica()`: Inicializa con valores por defecto
+
+##### **#region Métodos de Cálculo Geométrico**
+- `CalcularCentrosHexagonos()`: Calcula las posiciones de los 6 hexágonos externos
+- `CalcularVerticesHexagonos()`: Calcula todos los vértices de los anillos concéntricos
+- `ObtenerRadioEscalado()`: Aplica la escala al radio base
+
+##### **#region Métodos de Dibujo**
+- `Dibujar()`: Método principal que orquesta todo el dibujo
+- `DibujarLineasCentrales()`: Dibuja líneas desde el centro
+- `DibujarAnillosConcéntricos()`: Dibuja los anillos hexagonales
+- `DibujarLadosHexagono()`: Dibuja los lados de un hexágono específico
+- `DebesDibujarLado()`: Determina qué lados dibujar según la posición del hexágono
+- `ObtenerNumeroAnillosPorNivel()`: Calcula cuántos anillos mostrar según el nivel
+
+##### **#region Métodos de Transformación**
+- `Rotar()`: Aplica rotación en grados
+- `Reiniciar()`: Resetea todos los valores
+
+---
+
+### 2. **Form1.cs**
+Clase del formulario, responsable de la interacción con el usuario.
+
+#### Regiones de la Clase:
+
+##### **#region Campos Privados**
+- `canvas`: Bitmap para el dibujo
+- `figura`: Instancia de FiguraGeometrica
+
+##### **#region Constructor**
+- `Form1()`: Inicializa el formulario
+
+##### **#region Inicialización**
+- `InicializarComponentes()`: Configura componentes iniciales
+
+##### **#region Eventos de Botones - Entradas**
+- `btnCalcular_Click()`: Procesa el botón "Graficar"
+- `btnResetear_Click()`: Procesa el botón "Resetear"
+
+##### **#region Eventos de Botones - Rotación**
+- `btnRotarAntihorario_Click()`: Rota -5 grados
+- `btnRotarHorario_Click()`: Rota +5 grados
+
+##### **#region Eventos de Control - TrackBar**
+- `trackBarTamano_Scroll()`: Ajusta la escala
+
+##### **#region Eventos de Botones - Paso a Paso**
+- `btnAnterior_Click()`: Retrocede un nivel de dibujo
+- `btnSiguiente_Click()`: Avanza un nivel de dibujo
+
+##### **#region Métodos de Dibujo**
+- `ActualizarDibujo()`: Redibuja la figura
+- `LimpiarCanvas()`: Limpia el área de dibujo
+
+##### **#region Métodos de Configuración**
+- `ConfigurarParametrosFigura()`: Establece parámetros de la figura
+- `ReiniciarFigura()`: Resetea figura y controles
+
+##### **#region Métodos de Validación**
+- `ValidarEntradaRadio()`: Valida entrada numérica
+
+##### **#region Métodos de UI**
+- `MostrarMensajeError()`: Muestra mensajes de error
+
+##### **#region Eventos de Formulario**
+- Eventos generados automáticamente por el diseñador
+
+---
+
+## Principios de Diseño Aplicados
+
+### 1. **Separación de Responsabilidades**
+- **FiguraGeometrica**: Lógica geométrica y renderizado
+- **Form1**: Interacción con usuario y eventos de UI
+
+### 2. **Encapsulación**
+- Propiedades públicas para acceso controlado
+- Métodos privados para lógica interna
+
+### 3. **Cohesión Alta**
+- Cada método tiene una única responsabilidad clara
+- Nombres descriptivos y autoexplicativos
+
+### 4. **Acoplamiento Bajo**
+- Form1 solo conoce la interfaz pública de FiguraGeometrica
+- No hay dependencias circulares
+
+### 5. **Código Autodocumentado**
+- Nombres descriptivos de métodos y variables
+- Comentarios XML para documentación
+- Regiones para organización lógica
+
+---
+
+## Flujo de Ejecución
+
+```
+Usuario presiona "Graficar"
+    ↓
+btnCalcular_Click()
+    ↓
+ValidarEntradaRadio()
+    ↓
+ConfigurarParametrosFigura()
+    ↓
+ActualizarDibujo()
+    ↓
+figura.Dibujar()
+    ├── CalcularCentrosHexagonos()
+    ├── CalcularVerticesHexagonos()
+    ├── DibujarLineasCentrales()
+    └── DibujarAnillosConcéntricos()
+        └── DibujarLadosHexagono()
+            └── DebesDibujarLado()
+```
+
+---
+
+## Ventajas de la Nueva Estructura
+
+### ✅ **Mantenibilidad**
+- Código organizado y fácil de localizar
+- Cambios aislados en clases específicas
+
+### ✅ **Legibilidad**
+- Regiones claras para navegar
+- Nombres autodescriptivos
+- Comentarios XML
+
+### ✅ **Testabilidad**
+- FiguraGeometrica puede ser probada independientemente
+- Métodos pequeños y enfocados
+
+### ✅ **Extensibilidad**
+- Fácil agregar nuevas formas geométricas
+- Nuevas transformaciones sin afectar UI
+
+### ✅ **Reutilización**
+- FiguraGeometrica puede usarse en otros contextos
+- Métodos modulares y reutilizables
+
+---
+
+## Posibles Extensiones Futuras
+
+1. **Nuevas Figuras**: Crear clases heredadas de una interfaz `IFigura`
+2. **Exportación**: Agregar métodos para guardar como imagen
+3. **Animaciones**: Usar Timer para rotación automática
+4. **Colores**: Permitir personalización de colores
+5. **Zoom/Pan**: Implementar navegación en el canvas
