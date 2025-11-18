@@ -1,0 +1,16 @@
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.csproj.AssemblyReference.cache
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Home.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Properties.Resources.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.csproj.GenerateResource.cache
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.csproj.CoreCompileInputs.cache
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\bin\Debug\ProyectoU1_CCLl.exe.config
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\bin\Debug\ProyectoU1_CCLl.exe
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\bin\Debug\ProyectoU1_CCLl.pdb
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Figura1.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.exe
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.pdb
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.exe.config
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Figura2.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\Figura3.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Figura4.resources
+C:\Users\JERSON\Documents\IngenieríaSW\Programación\C#\Computacion_Grafica\PROYECTO\ProyectoP1_Figuras_Caiza_Cedeno_LLumiquinga_V2.0.0\ProyectoU1_CCLl\obj\Debug\ProyectoU1_CCLl.Figura5.resources

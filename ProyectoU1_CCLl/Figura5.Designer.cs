@@ -1,0 +1,308 @@
+namespace ProyectoU1_CCLl
+{
+    partial class Figura5
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.grpEntradas = new System.Windows.Forms.GroupBox();
+            this.btnResetear = new System.Windows.Forms.Button();
+            this.btnGraficar = new System.Windows.Forms.Button();
+            this.txtRadio = new System.Windows.Forms.TextBox();
+            this.lblRadio = new System.Windows.Forms.Label();
+            this.grpGrafica = new System.Windows.Forms.GroupBox();
+            this.picCanvas = new System.Windows.Forms.PictureBox();
+            this.grpMovimiento = new System.Windows.Forms.GroupBox();
+            this.btnGiroHorario = new System.Windows.Forms.Button();
+            this.btnGiroAntihorario = new System.Windows.Forms.Button();
+            this.lblGiroHorario = new System.Windows.Forms.Label();
+            this.lblGiroAntihorario = new System.Windows.Forms.Label();
+            this.lblMovimiento = new System.Windows.Forms.Label();
+            this.grpAjusteTamano = new System.Windows.Forms.GroupBox();
+            this.trackBarEscala = new System.Windows.Forms.TrackBar();
+            this.grpPasoAPaso = new System.Windows.Forms.GroupBox();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.grpEntradas.SuspendLayout();
+            this.grpGrafica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            this.grpMovimiento.SuspendLayout();
+            this.grpAjusteTamano.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEscala)).BeginInit();
+            this.grpPasoAPaso.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grpEntradas
+            // 
+            this.grpEntradas.Controls.Add(this.btnResetear);
+            this.grpEntradas.Controls.Add(this.btnGraficar);
+            this.grpEntradas.Controls.Add(this.txtRadio);
+            this.grpEntradas.Controls.Add(this.lblRadio);
+            this.grpEntradas.Location = new System.Drawing.Point(9, 10);
+            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEntradas.Name = "grpEntradas";
+            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEntradas.Size = new System.Drawing.Size(210, 106);
+            this.grpEntradas.TabIndex = 0;
+            this.grpEntradas.TabStop = false;
+            this.grpEntradas.Text = "Entradas:";
+            // 
+            // btnResetear
+            // 
+            this.btnResetear.Location = new System.Drawing.Point(15, 73);
+            this.btnResetear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetear.Name = "btnResetear";
+            this.btnResetear.Size = new System.Drawing.Size(75, 20);
+            this.btnResetear.TabIndex = 3;
+            this.btnResetear.Text = "Resetear";
+            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
+            // 
+            // btnGraficar
+            // 
+            this.btnGraficar.Location = new System.Drawing.Point(128, 32);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Name = "btnGraficar";
+            this.btnGraficar.Size = new System.Drawing.Size(68, 20);
+            this.btnGraficar.TabIndex = 2;
+            this.btnGraficar.Text = "Graficar";
+            this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
+            // 
+            // txtRadio
+            // 
+            this.txtRadio.Location = new System.Drawing.Point(15, 34);
+            this.txtRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRadio.Name = "txtRadio";
+            this.txtRadio.Size = new System.Drawing.Size(98, 20);
+            this.txtRadio.TabIndex = 1;
+            this.txtRadio.TextChanged += new System.EventHandler(this.txtRadio_TextChanged);
+            // 
+            // lblRadio
+            // 
+            this.lblRadio.AutoSize = true;
+            this.lblRadio.Location = new System.Drawing.Point(13, 18);
+            this.lblRadio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRadio.Name = "lblRadio";
+            this.lblRadio.Size = new System.Drawing.Size(144, 13);
+            this.lblRadio.TabIndex = 0;
+            this.lblRadio.Text = "Ingresa el radio del polígono:";
+            // 
+            // grpGrafica
+            // 
+            this.grpGrafica.Controls.Add(this.picCanvas);
+            this.grpGrafica.Location = new System.Drawing.Point(232, 10);
+            this.grpGrafica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpGrafica.Name = "grpGrafica";
+            this.grpGrafica.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpGrafica.Size = new System.Drawing.Size(352, 382);
+            this.grpGrafica.TabIndex = 1;
+            this.grpGrafica.TabStop = false;
+            this.grpGrafica.Text = "Gráfica:";
+            // 
+            // picCanvas
+            // 
+            this.picCanvas.BackColor = System.Drawing.Color.White;
+            this.picCanvas.Location = new System.Drawing.Point(8, 18);
+            this.picCanvas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCanvas.Name = "picCanvas";
+            this.picCanvas.Size = new System.Drawing.Size(338, 353);
+            this.picCanvas.TabIndex = 0;
+            this.picCanvas.TabStop = false;
+            this.picCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.picCanvas_Paint);
+            // 
+            // grpMovimiento
+            // 
+            this.grpMovimiento.Controls.Add(this.btnGiroHorario);
+            this.grpMovimiento.Controls.Add(this.btnGiroAntihorario);
+            this.grpMovimiento.Controls.Add(this.lblGiroHorario);
+            this.grpMovimiento.Controls.Add(this.lblGiroAntihorario);
+            this.grpMovimiento.Controls.Add(this.lblMovimiento);
+            this.grpMovimiento.Location = new System.Drawing.Point(9, 120);
+            this.grpMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpMovimiento.Name = "grpMovimiento";
+            this.grpMovimiento.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpMovimiento.Size = new System.Drawing.Size(210, 98);
+            this.grpMovimiento.TabIndex = 2;
+            this.grpMovimiento.TabStop = false;
+            this.grpMovimiento.Text = "Movimiento:";
+            // 
+            // btnGiroHorario
+            // 
+            this.btnGiroHorario.BackColor = System.Drawing.Color.LightBlue;
+            this.btnGiroHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiroHorario.Location = new System.Drawing.Point(128, 57);
+            this.btnGiroHorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGiroHorario.Name = "btnGiroHorario";
+            this.btnGiroHorario.Size = new System.Drawing.Size(68, 28);
+            this.btnGiroHorario.TabIndex = 4;
+            this.btnGiroHorario.Text = "+ 5 º";
+            this.btnGiroHorario.UseVisualStyleBackColor = false;
+            this.btnGiroHorario.Click += new System.EventHandler(this.btnGiroHorario_Click);
+            // 
+            // btnGiroAntihorario
+            // 
+            this.btnGiroAntihorario.BackColor = System.Drawing.Color.LightGreen;
+            this.btnGiroAntihorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiroAntihorario.Location = new System.Drawing.Point(15, 57);
+            this.btnGiroAntihorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGiroAntihorario.Name = "btnGiroAntihorario";
+            this.btnGiroAntihorario.Size = new System.Drawing.Size(68, 28);
+            this.btnGiroAntihorario.TabIndex = 3;
+            this.btnGiroAntihorario.Text = "- 5 º";
+            this.btnGiroAntihorario.UseVisualStyleBackColor = false;
+            this.btnGiroAntihorario.Click += new System.EventHandler(this.btnGiroAntihorario_Click);
+            // 
+            // lblGiroHorario
+            // 
+            this.lblGiroHorario.AutoSize = true;
+            this.lblGiroHorario.Location = new System.Drawing.Point(125, 41);
+            this.lblGiroHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGiroHorario.Name = "lblGiroHorario";
+            this.lblGiroHorario.Size = new System.Drawing.Size(66, 13);
+            this.lblGiroHorario.TabIndex = 2;
+            this.lblGiroHorario.Text = "Giro Horario:";
+            // 
+            // lblGiroAntihorario
+            // 
+            this.lblGiroAntihorario.AutoSize = true;
+            this.lblGiroAntihorario.Location = new System.Drawing.Point(13, 41);
+            this.lblGiroAntihorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGiroAntihorario.Name = "lblGiroAntihorario";
+            this.lblGiroAntihorario.Size = new System.Drawing.Size(82, 13);
+            this.lblGiroAntihorario.TabIndex = 1;
+            this.lblGiroAntihorario.Text = "Giro Antihorario:";
+            // 
+            // lblMovimiento
+            // 
+            this.lblMovimiento.Location = new System.Drawing.Point(13, 15);
+            this.lblMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMovimiento.Name = "lblMovimiento";
+            this.lblMovimiento.Size = new System.Drawing.Size(188, 24);
+            this.lblMovimiento.TabIndex = 0;
+            this.lblMovimiento.Text = " para rotar,  para mover vertical\r\nShift +  para mover horizontal";
+            // 
+            // grpAjusteTamano
+            // 
+            this.grpAjusteTamano.Controls.Add(this.trackBarEscala);
+            this.grpAjusteTamano.Location = new System.Drawing.Point(9, 223);
+            this.grpAjusteTamano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAjusteTamano.Name = "grpAjusteTamano";
+            this.grpAjusteTamano.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAjusteTamano.Size = new System.Drawing.Size(210, 65);
+            this.grpAjusteTamano.TabIndex = 3;
+            this.grpAjusteTamano.TabStop = false;
+            this.grpAjusteTamano.Text = "Ajusta el tamaño";
+            // 
+            // trackBarEscala
+            // 
+            this.trackBarEscala.Location = new System.Drawing.Point(15, 24);
+            this.trackBarEscala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBarEscala.Maximum = 200;
+            this.trackBarEscala.Minimum = 10;
+            this.trackBarEscala.Name = "trackBarEscala";
+            this.trackBarEscala.Size = new System.Drawing.Size(180, 45);
+            this.trackBarEscala.TabIndex = 0;
+            this.trackBarEscala.TickFrequency = 10;
+            this.trackBarEscala.Value = 100;
+            this.trackBarEscala.Scroll += new System.EventHandler(this.trackBarEscala_Scroll);
+            // 
+            // grpPasoAPaso
+            // 
+            this.grpPasoAPaso.Controls.Add(this.btnSiguiente);
+            this.grpPasoAPaso.Controls.Add(this.btnAnterior);
+            this.grpPasoAPaso.Location = new System.Drawing.Point(9, 292);
+            this.grpPasoAPaso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpPasoAPaso.Name = "grpPasoAPaso";
+            this.grpPasoAPaso.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpPasoAPaso.Size = new System.Drawing.Size(210, 65);
+            this.grpPasoAPaso.TabIndex = 4;
+            this.grpPasoAPaso.TabStop = false;
+            this.grpPasoAPaso.Text = "Paso a Paso:";
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.LightBlue;
+            this.btnSiguiente.Location = new System.Drawing.Point(105, 24);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 24);
+            this.btnSiguiente.TabIndex = 1;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAnterior.Location = new System.Drawing.Point(15, 24);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 24);
+            this.btnAnterior.TabIndex = 0;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // Figura5
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(594, 401);
+            this.Controls.Add(this.grpPasoAPaso);
+            this.Controls.Add(this.grpAjusteTamano);
+            this.Controls.Add(this.grpMovimiento);
+            this.Controls.Add(this.grpGrafica);
+            this.Controls.Add(this.grpEntradas);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Figura5";
+            this.Text = "Pentágonos y polígonos estrellados de 5 puntas.";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.grpEntradas.ResumeLayout(false);
+            this.grpEntradas.PerformLayout();
+            this.grpGrafica.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
+            this.grpMovimiento.ResumeLayout(false);
+            this.grpMovimiento.PerformLayout();
+            this.grpAjusteTamano.ResumeLayout(false);
+            this.grpAjusteTamano.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEscala)).EndInit();
+            this.grpPasoAPaso.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox grpEntradas;
+        private System.Windows.Forms.TextBox txtRadio;
+        private System.Windows.Forms.Label lblRadio;
+        private System.Windows.Forms.Button btnGraficar;
+        private System.Windows.Forms.Button btnResetear;
+        private System.Windows.Forms.GroupBox grpGrafica;
+        private System.Windows.Forms.PictureBox picCanvas;
+        private System.Windows.Forms.GroupBox grpMovimiento;
+        private System.Windows.Forms.Label lblMovimiento;
+        private System.Windows.Forms.Label lblGiroAntihorario;
+        private System.Windows.Forms.Label lblGiroHorario;
+        private System.Windows.Forms.Button btnGiroAntihorario;
+        private System.Windows.Forms.Button btnGiroHorario;
+        private System.Windows.Forms.GroupBox grpAjusteTamano;
+        private System.Windows.Forms.TrackBar trackBarEscala;
+        private System.Windows.Forms.GroupBox grpPasoAPaso;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
+    }
+}

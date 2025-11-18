@@ -1,0 +1,293 @@
+﻿namespace ProyectoU1_CCLl
+{
+    partial class Figura4
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.picCanvas = new System.Windows.Forms.PictureBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTamano = new System.Windows.Forms.TextBox();
+            this.grpBox = new System.Windows.Forms.GroupBox();
+            this.grpEntradas = new System.Windows.Forms.GroupBox();
+            this.btnResetear = new System.Windows.Forms.Button();
+            this.grpMovimiento = new System.Windows.Forms.GroupBox();
+            this.lblRotar = new System.Windows.Forms.Label();
+            this.lblVertical = new System.Windows.Forms.Label();
+            this.lblHorizontal = new System.Windows.Forms.Label();
+            this.btnRotarAntihorario = new System.Windows.Forms.Button();
+            this.btnRotarHorario = new System.Windows.Forms.Button();
+            this.lblAjusteTamano = new System.Windows.Forms.Label();
+            this.trackBarTamano = new System.Windows.Forms.TrackBar();
+            this.grpPasoAPaso = new System.Windows.Forms.GroupBox();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            this.grpBox.SuspendLayout();
+            this.grpEntradas.SuspendLayout();
+            this.grpMovimiento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTamano)).BeginInit();
+            this.grpPasoAPaso.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // picCanvas
+            // 
+            this.picCanvas.BackColor = System.Drawing.Color.White;
+            this.picCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCanvas.Location = new System.Drawing.Point(6, 21);
+            this.picCanvas.Name = "picCanvas";
+            this.picCanvas.Size = new System.Drawing.Size(380, 380);
+            this.picCanvas.TabIndex = 3;
+            this.picCanvas.TabStop = false;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(120, 68);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(80, 25);
+            this.btnCalcular.TabIndex = 1;
+            this.btnCalcular.Text = "Graficar";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ingresa el radio del polígono:";
+            // 
+            // txtTamano
+            // 
+            this.txtTamano.Location = new System.Drawing.Point(13, 42);
+            this.txtTamano.Name = "txtTamano";
+            this.txtTamano.Size = new System.Drawing.Size(100, 20);
+            this.txtTamano.TabIndex = 0;
+            this.txtTamano.Text = "100";
+            this.txtTamano.TextChanged += new System.EventHandler(this.txtTamano_TextChanged_1);
+            // 
+            // grpBox
+            // 
+            this.grpBox.Controls.Add(this.picCanvas);
+            this.grpBox.Location = new System.Drawing.Point(280, 12);
+            this.grpBox.Name = "grpBox";
+            this.grpBox.Size = new System.Drawing.Size(395, 410);
+            this.grpBox.TabIndex = 8;
+            this.grpBox.TabStop = false;
+            this.grpBox.Text = "Gráfica:";
+            // 
+            // grpEntradas
+            // 
+            this.grpEntradas.Controls.Add(this.label1);
+            this.grpEntradas.Controls.Add(this.txtTamano);
+            this.grpEntradas.Controls.Add(this.btnCalcular);
+            this.grpEntradas.Controls.Add(this.btnResetear);
+            this.grpEntradas.Location = new System.Drawing.Point(12, 12);
+            this.grpEntradas.Name = "grpEntradas";
+            this.grpEntradas.Size = new System.Drawing.Size(250, 140);
+            this.grpEntradas.TabIndex = 0;
+            this.grpEntradas.TabStop = false;
+            this.grpEntradas.Text = "Entradas:";
+            // 
+            // btnResetear
+            // 
+            this.btnResetear.Location = new System.Drawing.Point(13, 100);
+            this.btnResetear.Name = "btnResetear";
+            this.btnResetear.Size = new System.Drawing.Size(80, 25);
+            this.btnResetear.TabIndex = 2;
+            this.btnResetear.Text = "Resetear";
+            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
+            // 
+            // grpMovimiento
+            // 
+            this.grpMovimiento.Controls.Add(this.lblRotar);
+            this.grpMovimiento.Controls.Add(this.lblVertical);
+            this.grpMovimiento.Controls.Add(this.lblHorizontal);
+            this.grpMovimiento.Controls.Add(this.btnRotarAntihorario);
+            this.grpMovimiento.Controls.Add(this.btnRotarHorario);
+            this.grpMovimiento.Location = new System.Drawing.Point(12, 158);
+            this.grpMovimiento.Name = "grpMovimiento";
+            this.grpMovimiento.Size = new System.Drawing.Size(250, 110);
+            this.grpMovimiento.TabIndex = 1;
+            this.grpMovimiento.TabStop = false;
+            this.grpMovimiento.Text = "Movimiento:";
+            // 
+            // lblRotar
+            // 
+            this.lblRotar.AutoSize = true;
+            this.lblRotar.Location = new System.Drawing.Point(10, 20);
+            this.lblRotar.Name = "lblRotar";
+            this.lblRotar.Size = new System.Drawing.Size(91, 13);
+            this.lblRotar.TabIndex = 0;
+            this.lblRotar.Text = "← / → para rotar:";
+            // 
+            // lblVertical
+            // 
+            this.lblVertical.AutoSize = true;
+            this.lblVertical.Location = new System.Drawing.Point(10, 38);
+            this.lblVertical.Name = "lblVertical";
+            this.lblVertical.Size = new System.Drawing.Size(152, 13);
+            this.lblVertical.TabIndex = 1;
+            this.lblVertical.Text = "↑ / ↓ para mover verticalmente";
+            // 
+            // lblHorizontal
+            // 
+            this.lblHorizontal.AutoSize = true;
+            this.lblHorizontal.Location = new System.Drawing.Point(10, 56);
+            this.lblHorizontal.Name = "lblHorizontal";
+            this.lblHorizontal.Size = new System.Drawing.Size(206, 13);
+            this.lblHorizontal.TabIndex = 2;
+            this.lblHorizontal.Text = "Shift + ← / → para mover horizontalmente";
+            // 
+            // btnRotarAntihorario
+            // 
+            this.btnRotarAntihorario.BackColor = System.Drawing.Color.LightGreen;
+            this.btnRotarAntihorario.Location = new System.Drawing.Point(13, 75);
+            this.btnRotarAntihorario.Name = "btnRotarAntihorario";
+            this.btnRotarAntihorario.Size = new System.Drawing.Size(80, 25);
+            this.btnRotarAntihorario.TabIndex = 0;
+            this.btnRotarAntihorario.Text = "- 5 º";
+            this.btnRotarAntihorario.UseVisualStyleBackColor = false;
+            this.btnRotarAntihorario.Click += new System.EventHandler(this.btnRotarAntihorario_Click);
+            // 
+            // btnRotarHorario
+            // 
+            this.btnRotarHorario.BackColor = System.Drawing.Color.LightBlue;
+            this.btnRotarHorario.Location = new System.Drawing.Point(145, 75);
+            this.btnRotarHorario.Name = "btnRotarHorario";
+            this.btnRotarHorario.Size = new System.Drawing.Size(80, 25);
+            this.btnRotarHorario.TabIndex = 1;
+            this.btnRotarHorario.Text = "+ 5 º";
+            this.btnRotarHorario.UseVisualStyleBackColor = false;
+            this.btnRotarHorario.Click += new System.EventHandler(this.btnRotarHorario_Click);
+            // 
+            // lblAjusteTamano
+            // 
+            this.lblAjusteTamano.AutoSize = true;
+            this.lblAjusteTamano.Location = new System.Drawing.Point(12, 275);
+            this.lblAjusteTamano.Name = "lblAjusteTamano";
+            this.lblAjusteTamano.Size = new System.Drawing.Size(85, 13);
+            this.lblAjusteTamano.TabIndex = 2;
+            this.lblAjusteTamano.Text = "Ajusta el tamaño";
+            // 
+            // trackBarTamano
+            // 
+            this.trackBarTamano.Location = new System.Drawing.Point(12, 292);
+            this.trackBarTamano.Maximum = 200;
+            this.trackBarTamano.Minimum = 10;
+            this.trackBarTamano.Name = "trackBarTamano";
+            this.trackBarTamano.Size = new System.Drawing.Size(250, 45);
+            this.trackBarTamano.TabIndex = 2;
+            this.trackBarTamano.TickFrequency = 10;
+            this.trackBarTamano.Value = 100;
+            this.trackBarTamano.Scroll += new System.EventHandler(this.trackBarTamano_Scroll);
+            // 
+            // grpPasoAPaso
+            // 
+            this.grpPasoAPaso.Controls.Add(this.btnAnterior);
+            this.grpPasoAPaso.Controls.Add(this.btnSiguiente);
+            this.grpPasoAPaso.Location = new System.Drawing.Point(12, 345);
+            this.grpPasoAPaso.Name = "grpPasoAPaso";
+            this.grpPasoAPaso.Size = new System.Drawing.Size(250, 70);
+            this.grpPasoAPaso.TabIndex = 3;
+            this.grpPasoAPaso.TabStop = false;
+            this.grpPasoAPaso.Text = "Paso a Paso:";
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAnterior.Location = new System.Drawing.Point(13, 25);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(80, 30);
+            this.btnAnterior.TabIndex = 0;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.LightBlue;
+            this.btnSiguiente.Location = new System.Drawing.Point(145, 25);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(80, 30);
+            this.btnSiguiente.TabIndex = 1;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(687, 434);
+            this.Controls.Add(this.grpPasoAPaso);
+            this.Controls.Add(this.trackBarTamano);
+            this.Controls.Add(this.lblAjusteTamano);
+            this.Controls.Add(this.grpMovimiento);
+            this.Controls.Add(this.grpEntradas);
+            this.Controls.Add(this.grpBox);
+            this.Name = "Form1";
+            this.Text = "Pentágonos y polígonos estrellados de 5 puntas.";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
+            this.grpBox.ResumeLayout(false);
+            this.grpEntradas.ResumeLayout(false);
+            this.grpEntradas.PerformLayout();
+            this.grpMovimiento.ResumeLayout(false);
+            this.grpMovimiento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTamano)).EndInit();
+            this.grpPasoAPaso.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.PictureBox picCanvas;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTamano;
+        private System.Windows.Forms.GroupBox grpBox;
+        private System.Windows.Forms.GroupBox grpEntradas;
+        private System.Windows.Forms.Button btnResetear;
+        private System.Windows.Forms.GroupBox grpMovimiento;
+        private System.Windows.Forms.Label lblRotar;
+        private System.Windows.Forms.Label lblVertical;
+        private System.Windows.Forms.Label lblHorizontal;
+        private System.Windows.Forms.Button btnRotarAntihorario;
+        private System.Windows.Forms.Button btnRotarHorario;
+        private System.Windows.Forms.Label lblAjusteTamano;
+        private System.Windows.Forms.TrackBar trackBarTamano;
+        private System.Windows.Forms.GroupBox grpPasoAPaso;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
+    }
+}
+
