@@ -57,8 +57,10 @@
     <Compile Include="Modelo\Cilindro.cs" />
     <Compile Include="Modelo\Cono.cs" />
     <Compile Include="Modelo\Cubo.cs" />
+    <Compile Include="Modelo\Esfera.cs" />
     <Compile Include="Modelo\Figura3D.cs" />
     <Compile Include="Modelo\Piramide.cs" />
+    <Compile Include="Modelo\PrismaPentagonal.cs" />
     <Compile Include="Modelo\TipoMaterial.cs" />
     <Compile Include="Vista\Home.cs">
       <SubType>Form</SubType>

@@ -255,6 +255,14 @@ namespace PROYECTO_U2_CCLl
                 {
                     DibujarCilindroGL(figura, cilindro);
                 }
+                else if (figura is Esfera esfera)
+                {
+                    DibujarEsferaGL(figura, esfera);
+                }
+                else if (figura is PrismaPentagonal prismaPentagonal)
+                {
+                    DibujarPrismaPentagonalGL(figura, prismaPentagonal);
+                }
             }
 
             glControlWindow.SwapBuffers();
@@ -738,6 +746,286 @@ namespace PROYECTO_U2_CCLl
             }
         }
 
+        private void DibujarEsferaGL(Figura3D figura, Esfera esfera)
+        {
+            float radioX = esfera.Radio * figura.EscalaX;
+            float radioY = esfera.Radio * figura.EscalaY;
+            float radioZ = esfera.Radio * figura.EscalaZ;
+            int segmentos = esfera.Segmentos;
+            int anillos = esfera.Anillos;
+
+            // Generar vértices de la esfera usando coordenadas esféricas
+            var vertices = new List<Vector3>();
+
+            for (int lat = 0; lat <= anillos; lat++)
+            {
+                float theta = lat * (float)Math.PI / anillos;
+                float sinTheta = (float)Math.Sin(theta);
+                float cosTheta = (float)Math.Cos(theta);
+
+                for (int lon = 0; lon <= segmentos; lon++)
+                {
+                    float phi = lon * 2 * (float)Math.PI / segmentos;
+                    float sinPhi = (float)Math.Sin(phi);
+                    float cosPhi = (float)Math.Cos(phi);
+
+                    float x = cosPhi * sinTheta;
+                    float y = cosTheta;
+                    float z = sinPhi * sinTheta;
+
+                    // Aplicar escala diferente en cada eje
+                    vertices.Add(new Vector3(x * radioX, y * radioY, z * radioZ));
+                }
+            }
+
+            // Aplicar rotaciones locales
+            Matrix4 rot = Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(figura.RotZ)) *
+                          Matrix4.CreateRotationY(MathHelper.DegreesToRadians(figura.RotY)) *
+                          Matrix4.CreateRotationX(MathHelper.DegreesToRadians(figura.RotX));
+
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                vertices[i] = TransformVec(vertices[i], rot);
+            }
+
+            // Traslación global
+            var offset = new Vector3(figura.PosX, figura.PosY, figura.PosZ);
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                vertices[i] += offset;
+            }
+
+            var c = figura.ColorFigura;
+
+            if (figura.Material == TipoMaterial.Wireframe)
+            {
+                GL.LineWidth(1.5f);
+                GL.Color4(c);
+
+                // Dibujar líneas de latitud
+                for (int lat = 0; lat < anillos; lat++)
+                {
+                    GL.Begin(PrimitiveType.LineLoop);
+                    for (int lon = 0; lon <= segmentos; lon++)
+                    {
+                        int idx = lat * (segmentos + 1) + lon;
+                        GL.Vertex3(vertices[idx]);
+                    }
+                    GL.End();
+                }
+
+                // Dibujar líneas de longitud
+                for (int lon = 0; lon <= segmentos; lon++)
+                {
+                    GL.Begin(PrimitiveType.LineStrip);
+                    for (int lat = 0; lat <= anillos; lat++)
+                    {
+                        int idx = lat * (segmentos + 1) + lon;
+                        GL.Vertex3(vertices[idx]);
+                    }
+                    GL.End();
+                }
+            }
+            else
+            {
+                if (figura.Material == TipoMaterial.Translucido)
+                {
+                    GL.Color4(c.R / 255f, c.G / 255f, c.B / 255f, 0.5f);
+                }
+                else
+                {
+                    GL.Color4(c);
+                }
+
+                // Dibujar triángulos de la esfera
+                for (int lat = 0; lat < anillos; lat++)
+                {
+                    GL.Begin(PrimitiveType.QuadStrip);
+                    for (int lon = 0; lon <= segmentos; lon++)
+                    {
+                        int idx1 = lat * (segmentos + 1) + lon;
+                        int idx2 = (lat + 1) * (segmentos + 1) + lon;
+
+                        GL.Vertex3(vertices[idx1]);
+                        GL.Vertex3(vertices[idx2]);
+                    }
+                    GL.End();
+                }
+
+                // Dibujar algunas líneas para referencia
+                GL.LineWidth(1.0f);
+                GL.Color4(0f, 0f, 0f, 0.4f);
+
+                // Líneas de latitud cada 4 anillos
+                for (int lat = 0; lat < anillos; lat += 4)
+                {
+                    GL.Begin(PrimitiveType.LineLoop);
+                    for (int lon = 0; lon <= segmentos; lon++)
+                    {
+                        int idx = lat * (segmentos + 1) + lon;
+                        GL.Vertex3(vertices[idx]);
+                    }
+                    GL.End();
+                }
+
+                // Líneas de longitud cada 4 segmentos
+                for (int lon = 0; lon <= segmentos; lon += 4)
+                {
+                    GL.Begin(PrimitiveType.LineStrip);
+                    for (int lat = 0; lat <= anillos; lat++)
+                    {
+                        int idx = lat * (segmentos + 1) + lon;
+                        GL.Vertex3(vertices[idx]);
+                    }
+                    GL.End();
+                }
+            }
+        }
+
+        private void DibujarPrismaPentagonalGL(Figura3D figura, PrismaPentagonal prismaPentagonal)
+        {
+            float radioX = prismaPentagonal.Radio * figura.EscalaX;
+            float radioZ = prismaPentagonal.Radio * figura.EscalaZ;
+            float altura = prismaPentagonal.Altura * figura.EscalaY;
+            int lados = 5; // Pentágono
+
+            // Generar vértices de ambos pentágonos (inferior y superior)
+            var verticesInferior = new Vector3[lados];
+            var verticesSuperior = new Vector3[lados];
+            float angleStep = 360f / lados;
+
+            for (int i = 0; i < lados; i++)
+            {
+                float angle = MathHelper.DegreesToRadians(i * angleStep);
+                float x = radioX * (float)Math.Cos(angle);
+                float z = radioZ * (float)Math.Sin(angle);
+                verticesInferior[i] = new Vector3(x, 0, z);
+                verticesSuperior[i] = new Vector3(x, altura, z);
+            }
+
+            // Aplicar rotaciones locales
+            Matrix4 rot = Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(figura.RotZ)) *
+                          Matrix4.CreateRotationY(MathHelper.DegreesToRadians(figura.RotY)) *
+                          Matrix4.CreateRotationX(MathHelper.DegreesToRadians(figura.RotX));
+
+            for (int i = 0; i < lados; i++)
+            {
+                verticesInferior[i] = TransformVec(verticesInferior[i], rot);
+                verticesSuperior[i] = TransformVec(verticesSuperior[i], rot);
+            }
+
+            // Traslación global
+            var offset = new Vector3(figura.PosX, figura.PosY, figura.PosZ);
+            for (int i = 0; i < lados; i++)
+            {
+                verticesInferior[i] += offset;
+                verticesSuperior[i] += offset;
+            }
+
+            var c = figura.ColorFigura;
+
+            if (figura.Material == TipoMaterial.Wireframe)
+            {
+                GL.LineWidth(2f);
+                GL.Color4(c);
+                GL.Begin(PrimitiveType.Lines);
+
+                // Pentágono inferior
+                for (int i = 0; i < lados; i++)
+                {
+                    int next = (i + 1) % lados;
+                    GL.Vertex3(verticesInferior[i]);
+                    GL.Vertex3(verticesInferior[next]);
+                }
+
+                // Pentágono superior
+                for (int i = 0; i < lados; i++)
+                {
+                    int next = (i + 1) % lados;
+                    GL.Vertex3(verticesSuperior[i]);
+                    GL.Vertex3(verticesSuperior[next]);
+                }
+
+                // Líneas verticales
+                for (int i = 0; i < lados; i++)
+                {
+                    GL.Vertex3(verticesInferior[i]);
+                    GL.Vertex3(verticesSuperior[i]);
+                }
+
+                GL.End();
+            }
+            else
+            {
+                if (figura.Material == TipoMaterial.Translucido)
+                {
+                    GL.Color4(c.R / 255f, c.G / 255f, c.B / 255f, 0.5f);
+                }
+                else
+                {
+                    GL.Color4(c);
+                }
+
+                // Dibujar superficie lateral (caras rectangulares)
+                GL.Begin(PrimitiveType.Quads);
+                for (int i = 0; i < lados; i++)
+                {
+                    int next = (i + 1) % lados;
+                    GL.Vertex3(verticesInferior[i]);
+                    GL.Vertex3(verticesInferior[next]);
+                    GL.Vertex3(verticesSuperior[next]);
+                    GL.Vertex3(verticesSuperior[i]);
+                }
+                GL.End();
+
+                // Dibujar tapa inferior (pentágono)
+                GL.Begin(PrimitiveType.TriangleFan);
+                GL.Vertex3(offset); // Centro inferior
+                for (int i = 0; i < lados; i++)
+                {
+                    GL.Vertex3(verticesInferior[i]);
+                }
+                GL.Vertex3(verticesInferior[0]); // Cerrar
+                GL.End();
+
+                // Dibujar tapa superior (pentágono)
+                var centroSuperior = new Vector3(0, altura, 0);
+                centroSuperior = TransformVec(centroSuperior, rot) + offset;
+                GL.Begin(PrimitiveType.TriangleFan);
+                GL.Vertex3(centroSuperior);
+                for (int i = lados - 1; i >= 0; i--)
+                {
+                    GL.Vertex3(verticesSuperior[i]);
+                }
+                GL.Vertex3(verticesSuperior[lados - 1]); // Cerrar
+                GL.End();
+
+                // Dibujar aristas para referencia
+                GL.LineWidth(1.5f);
+                GL.Color4(0f, 0f, 0f, 0.6f);
+                GL.Begin(PrimitiveType.Lines);
+
+                // Pentágonos
+                for (int i = 0; i < lados; i++)
+                {
+                    int next = (i + 1) % lados;
+                    GL.Vertex3(verticesInferior[i]);
+                    GL.Vertex3(verticesInferior[next]);
+                    GL.Vertex3(verticesSuperior[i]);
+                    GL.Vertex3(verticesSuperior[next]);
+                }
+
+                // Líneas verticales
+                for (int i = 0; i < lados; i++)
+                {
+                    GL.Vertex3(verticesInferior[i]);
+                    GL.Vertex3(verticesSuperior[i]);
+                }
+
+                GL.End();
+            }
+        }
+
         private void picturePiramide_Click(object sender, EventArgs e)
         {
 
@@ -861,6 +1149,69 @@ namespace PROYECTO_U2_CCLl
             // Mensaje de confirmación
             MessageBox.Show($"Cilindro agregado!\n\nUsa los controles para rotarlo y transformarlo.",
                "Figura creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureEsfera_Click(object sender, EventArgs e)
+        {
+            // Contar esferas existentes
+            int numeroEsferas = renderizador.ObtenerFiguras()
+                .Where(f => f is Esfera).Count();
+
+            Esfera nuevaEsfera = new Esfera(
+                $"Esfera {numeroEsferas + 1}",
+                radio: 40,
+                segmentos: 32,
+                anillos: 16
+            );
+
+            // Configuración inicial
+            nuevaEsfera.PosX = 0;
+            nuevaEsfera.PosY = 0;
+            nuevaEsfera.PosZ = 0;
+            nuevaEsfera.ColorFigura = Color.HotPink;
+
+            // Agregar y seleccionar
+            renderizador.AgregarFigura(nuevaEsfera);
+            renderizador.SeleccionarFigura(nuevaEsfera);
+
+            // Actualizar UI
+            ActualizarListaFiguras();
+            ActualizarControlesSegunFigura(nuevaEsfera);
+
+            // Mensaje de confirmación
+            MessageBox.Show($"Esfera agregada!\n\nUsa los controles para rotarla y transformarla.",
+                "Figura creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void picturePrismaRectang_Click(object sender, EventArgs e)
+        {
+            // Contar prismas pentagonales existentes
+            int numeroPrismas = renderizador.ObtenerFiguras()
+                .Where(f => f is PrismaPentagonal).Count();
+
+            PrismaPentagonal nuevoPrisma = new PrismaPentagonal(
+                $"Prisma Pentagonal {numeroPrismas + 1}",
+                radio: 35,
+                altura: 70
+            );
+
+            // Configuración inicial
+            nuevoPrisma.PosX = 0;
+            nuevoPrisma.PosY = 0;
+            nuevoPrisma.PosZ = 0;
+            nuevoPrisma.ColorFigura = Color.Cyan;
+
+            // Agregar y seleccionar
+            renderizador.AgregarFigura(nuevoPrisma);
+            renderizador.SeleccionarFigura(nuevoPrisma);
+
+            // Actualizar UI
+            ActualizarListaFiguras();
+            ActualizarControlesSegunFigura(nuevoPrisma);
+
+            // Mensaje de confirmación
+            MessageBox.Show($"Prisma Pentagonal agregado!\n\nUsa los controles para rotarlo y transformarlo.",
+                "Figura creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ActualizarListaFiguras()
