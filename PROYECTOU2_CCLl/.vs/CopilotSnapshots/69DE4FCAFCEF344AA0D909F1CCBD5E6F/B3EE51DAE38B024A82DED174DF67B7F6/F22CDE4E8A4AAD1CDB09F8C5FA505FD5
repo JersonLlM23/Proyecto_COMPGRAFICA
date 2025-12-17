@@ -1,0 +1,101 @@
+﻿using System;
+using System.Drawing;
+
+namespace PROYECTO_U2_CCLl
+{
+    /// <summary>
+    /// Representa un cono 3D con transformaciones y renderizado
+    /// </summary>
+    public class Cone3D : Shape3D
+    {
+        public float Radius { get; set; }
+        public float Height { get; set; }
+        public int Segments { get; set; }
+
+      public Cone3D(string name) : base(name)
+        {
+    Radius = 0.5f;
+            Height = 1.0f;
+   Segments = 20;
+        }
+
+        /// <summary>
+        /// Genera los vértices del cono
+        /// </summary>
+        public override Vector3D[] GenerateVertices()
+        {
+      Vector3D[] vertices = new Vector3D[Segments + 2];
+            
+            // Vértice superior (punta del cono)
+    vertices[0] = new Vector3D(0, Height / 2, 0);
+     
+        // Vértices de la base circular
+   for (int i = 0; i < Segments; i++)
+            {
+         float angle = (float)(2 * Math.PI * i / Segments);
+  float x = Radius * (float)Math.Cos(angle);
+      float z = Radius * (float)Math.Sin(angle);
+  vertices[i + 1] = new Vector3D(x, -Height / 2, z);
+   }
+            
+         // Centro de la base
+vertices[Segments + 1] = new Vector3D(0, -Height / 2, 0);
+            
+            return vertices;
+      }
+
+        /// <summary>
+        /// Dibuja el cono en el Graphics especificado
+        /// </summary>
+        public override void Draw(Graphics g, Size screenSize, float cameraDistance)
+        {
+      Vector3D[] vertices = GenerateVertices();
+    PointF[] projectedPoints = new PointF[vertices.Length];
+            
+ // Transformar y proyectar todos los vértices
+     for (int i = 0; i < vertices.Length; i++)
+            {
+    Vector3D transformed = TransformVertex(vertices[i]);
+     projectedPoints[i] = ProjectTo2D(transformed, cameraDistance, screenSize);
+            }
+   
+            using (Pen pen = new Pen(Color, 1))
+        using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, Color)))
+          {
+  // Dibujar las líneas laterales del cono (de la punta a la base)
+             for (int i = 1; i <= Segments; i++)
+      {
+      g.DrawLine(pen, projectedPoints[0], projectedPoints[i]);
+                }
+      
+  // Dibujar la base circular
+   for (int i = 1; i <= Segments; i++)
+          {
+        int next = (i == Segments) ? 1 : i + 1;
+         g.DrawLine(pen, projectedPoints[i], projectedPoints[next]);
+     }
+     
+     // Rellenar triángulos de la superficie lateral (semi-transparente)
+      for (int i = 1; i <= Segments; i++)
+          {
+      int next = (i == Segments) ? 1 : i + 1;
+              PointF[] triangle = new PointF[] 
+ { 
+      projectedPoints[0], 
+ projectedPoints[i], 
+        projectedPoints[next] 
+   };
+       g.FillPolygon(brush, triangle);
+     }
+          
+   // Rellenar la base
+                PointF[] basePoints = new PointF[Segments];
+      for (int i = 0; i < Segments; i++)
+          {
+           basePoints[i] = projectedPoints[i + 1];
+                }
+    g.FillPolygon(brush, basePoints);
+            }
+    }
+    }
+}

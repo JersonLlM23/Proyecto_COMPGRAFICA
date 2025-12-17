@@ -1,0 +1,233 @@
+﻿using System;
+using System.Drawing;
+
+namespace PROYECTO_U2_CCLl
+{
+    /// <summary>
+    /// Representa un cilindro 3D con transformaciones y renderizado
+    /// </summary>
+    public class Cylinder3D
+    {
+        public string Name { get; set; }
+        public Color Color { get; set; }
+        public Vector3D Position { get; set; }
+        public Vector3D Rotation { get; set; }
+      public Vector3D Translation { get; set; }
+      public float Radius { get; set; }
+        public float Height { get; set; }
+        public int Segments { get; set; }
+
+      public Cylinder3D(string name)
+        {
+ Name = name;
+Color = Color.Green;
+            Position = new Vector3D(0, 0, 0);
+    Rotation = new Vector3D(0, 0, 0);
+            Translation = new Vector3D(0, 0, 0);
+  Radius = 0.5f;
+    Height = 1.0f;
+     Segments = 20;
+     }
+
+        /// <summary>
+        /// Genera los vértices del cilindro
+        /// </summary>
+        public Vector3D[] GenerateVertices()
+        {
+      // Top circle + Bottom circle + centers
+ Vector3D[] vertices = new Vector3D[Segments * 2 + 2];
+         
+    // Vértices del círculo superior
+            for (int i = 0; i < Segments; i++)
+            {
+       float angle = (float)(2 * Math.PI * i / Segments);
+             float x = Radius * (float)Math.Cos(angle);
+float z = Radius * (float)Math.Sin(angle);
+   vertices[i] = new Vector3D(x, Height / 2, z);
+            }
+            
+// Vértices del círculo inferior
+            for (int i = 0; i < Segments; i++)
+      {
+       float angle = (float)(2 * Math.PI * i / Segments);
+     float x = Radius * (float)Math.Cos(angle);
+  float z = Radius * (float)Math.Sin(angle);
+      vertices[Segments + i] = new Vector3D(x, -Height / 2, z);
+      }
+            
+     // Centro del círculo superior
+      vertices[Segments * 2] = new Vector3D(0, Height / 2, 0);
+ 
+            // Centro del círculo inferior
+            vertices[Segments * 2 + 1] = new Vector3D(0, -Height / 2, 0);
+          
+            return vertices;
+        }
+
+      /// <summary>
+        /// Aplica las transformaciones (rotación, translación, posición) a un vértice
+        /// </summary>
+        public Vector3D TransformVertex(Vector3D vertex)
+     {
+  Vector3D transformed = new Vector3D(vertex.X, vertex.Y, vertex.Z);
+         
+            // Aplicar rotación
+            transformed = RotateX(transformed, Rotation.X);
+       transformed = RotateY(transformed, Rotation.Y);
+            transformed = RotateZ(transformed, Rotation.Z);
+
+    // Aplicar translación
+ transformed.X += Translation.X;
+        transformed.Y += Translation.Y;
+            transformed.Z += Translation.Z;
+            
+            // Aplicar posición
+            transformed.X += Position.X / 10.0f;
+   transformed.Y += Position.Y / 10.0f;
+            transformed.Z += Position.Z / 10.0f;
+        
+    return transformed;
+        }
+
+        /// <summary>
+      /// Rotación alrededor del eje X
+        /// </summary>
+        private Vector3D RotateX(Vector3D v, float angle)
+   {
+            float rad = angle * (float)Math.PI / 180.0f;
+       float cos = (float)Math.Cos(rad);
+         float sin = (float)Math.Sin(rad);
+
+          return new Vector3D(
+      v.X,
+                v.Y * cos - v.Z * sin,
+       v.Y * sin + v.Z * cos
+            );
+   }
+
+        /// <summary>
+        /// Rotación alrededor del eje Y
+     /// </summary>
+        private Vector3D RotateY(Vector3D v, float angle)
+        {
+ float rad = angle * (float)Math.PI / 180.0f;
+            float cos = (float)Math.Cos(rad);
+  float sin = (float)Math.Sin(rad);
+        
+    return new Vector3D(
+         v.X * cos + v.Z * sin,
+      v.Y,
+      -v.X * sin + v.Z * cos
+            );
+        }
+
+        /// <summary>
+        /// Rotación alrededor del eje Z
+        /// </summary>
+     private Vector3D RotateZ(Vector3D v, float angle)
+  {
+     float rad = angle * (float)Math.PI / 180.0f;
+            float cos = (float)Math.Cos(rad);
+     float sin = (float)Math.Sin(rad);
+    
+            return new Vector3D(
+         v.X * cos - v.Y * sin,
+    v.X * sin + v.Y * cos,
+  v.Z
+      );
+        }
+
+        /// <summary>
+        /// Proyecta un punto 3D a coordenadas 2D de pantalla usando proyección en perspectiva
+        /// </summary>
+        public PointF ProjectTo2D(Vector3D point, float cameraDistance, Size screenSize)
+        {
+            float perspective = cameraDistance / (cameraDistance + point.Z);
+ 
+            float x = point.X * 100 * perspective + screenSize.Width / 2;
+            float y = -point.Y * 100 * perspective + screenSize.Height / 2;
+       
+  return new PointF(x, y);
+        }
+
+        /// <summary>
+     /// Dibuja el cilindro en el Graphics especificado
+   /// </summary>
+   public void Draw(Graphics g, Size screenSize, float cameraDistance)
+   {
+            Vector3D[] vertices = GenerateVertices();
+    PointF[] projectedPoints = new PointF[vertices.Length];
+      
+  // Transformar y proyectar todos los vértices
+            for (int i = 0; i < vertices.Length; i++)
+     {
+   Vector3D transformed = TransformVertex(vertices[i]);
+         projectedPoints[i] = ProjectTo2D(transformed, cameraDistance, screenSize);
+     }
+          
+       using (Pen pen = new Pen(Color, 1))
+  using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, Color)))
+            {
+                // Dibujar líneas verticales conectando los círculos
+     for (int i = 0; i < Segments; i++)
+        {
+            g.DrawLine(pen, projectedPoints[i], projectedPoints[Segments + i]);
+         }
+        
+   // Dibujar el círculo superior
+for (int i = 0; i < Segments; i++)
+ {
+        int next = (i + 1) % Segments;
+             g.DrawLine(pen, projectedPoints[i], projectedPoints[next]);
+         }
+    
+        // Dibujar el círculo inferior
+         for (int i = 0; i < Segments; i++)
+         {
+  int next = (i + 1) % Segments;
+          g.DrawLine(pen, projectedPoints[Segments + i], projectedPoints[Segments + next]);
+                }
+            
+          // Rellenar la superficie lateral con triángulos (semi-transparente)
+ for (int i = 0; i < Segments; i++)
+   {
+  int next = (i + 1) % Segments;
+        
+         // Primer triángulo del cuadrilátero
+              PointF[] triangle1 = new PointF[] 
+       { 
+    projectedPoints[i], 
+    projectedPoints[next],
+                 projectedPoints[Segments + i]
+        };
+     g.FillPolygon(brush, triangle1);
+                
+// Segundo triángulo del cuadrilátero
+       PointF[] triangle2 = new PointF[] 
+           { 
+  projectedPoints[next],
+         projectedPoints[Segments + next],
+   projectedPoints[Segments + i]
+   };
+        g.FillPolygon(brush, triangle2);
+     }
+          
+ // Rellenar el círculo superior
+      PointF[] topCircle = new PointF[Segments];
+           for (int i = 0; i < Segments; i++)
+             {
+    topCircle[i] = projectedPoints[i];
+       }
+      g.FillPolygon(brush, topCircle);
+       
+    // Rellenar el círculo inferior
+       PointF[] bottomCircle = new PointF[Segments];
+         for (int i = 0; i < Segments; i++)
+        {
+            bottomCircle[i] = projectedPoints[Segments + i];
+     }
+g.FillPolygon(brush, bottomCircle);
+            }
+    }
+    }
+}

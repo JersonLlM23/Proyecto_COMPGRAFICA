@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Controlador\RenderizadorGDI.cs" />
     <Compile Include="Controlador\RenderizadorOpenGL.cs" />
+    <Compile Include="Modelo\Cilindro.cs" />
+    <Compile Include="Modelo\Cono.cs" />
     <Compile Include="Modelo\Cubo.cs" />
     <Compile Include="Modelo\Figura3D.cs" />
     <Compile Include="Modelo\Piramide.cs" />

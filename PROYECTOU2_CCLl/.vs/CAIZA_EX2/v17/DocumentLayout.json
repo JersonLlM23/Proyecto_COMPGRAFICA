@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|CAIZA_EX2.csproj|c:\\users\\eluce\\codigo\\uni\\computacion_grafica\\proyecto_compgrafica\\proyectou2_ccll\\cone3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|CAIZA_EX2.csproj|solutionrelative:cone3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\cylinder3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:cylinder3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\project_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:project_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\cone_implementation_readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:cone_implementation_readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\visual_guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:visual_guide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\cylinder_implementation_readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{46CAF129-467D-4719-8411-B963E7835AF2}|PROYECTO_U2_CCLl.csproj|solutionrelative:cylinder_implementation_readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Home.cs",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.cs",
+              "RelativeDocumentMoniker": "Home.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.cs",
+              "RelativeToolTip": "Home.cs",
+              "ViewState": "AgIAAIcBAAAAAAAAAAD4v54BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T04:35:19.67Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Home.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.Designer.cs",
+              "RelativeDocumentMoniker": "Home.Designer.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.Designer.cs",
+              "RelativeToolTip": "Home.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T02:21:20.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VISUAL_GUIDE.md",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\VISUAL_GUIDE.md",
+              "RelativeDocumentMoniker": "VISUAL_GUIDE.md",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\VISUAL_GUIDE.md",
+              "RelativeToolTip": "VISUAL_GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-16T02:45:01.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PROJECT_SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\PROJECT_SUMMARY.md",
+              "RelativeDocumentMoniker": "PROJECT_SUMMARY.md",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\PROJECT_SUMMARY.md",
+              "RelativeToolTip": "PROJECT_SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-16T02:43:58.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CYLINDER_IMPLEMENTATION_README.md",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\CYLINDER_IMPLEMENTATION_README.md",
+              "RelativeDocumentMoniker": "CYLINDER_IMPLEMENTATION_README.md",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\CYLINDER_IMPLEMENTATION_README.md",
+              "RelativeToolTip": "CYLINDER_IMPLEMENTATION_README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-16T02:42:54.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cylinder3D.cs",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Cylinder3D.cs",
+              "RelativeDocumentMoniker": "Cylinder3D.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Cylinder3D.cs",
+              "RelativeToolTip": "Cylinder3D.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T02:40:30.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vector3D.cs",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Vector3D.cs",
+              "RelativeDocumentMoniker": "Vector3D.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Vector3D.cs",
+              "RelativeToolTip": "Vector3D.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAAAIwEwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T02:29:33.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CONE_IMPLEMENTATION_README.md",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\CONE_IMPLEMENTATION_README.md",
+              "RelativeDocumentMoniker": "CONE_IMPLEMENTATION_README.md",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\CONE_IMPLEMENTATION_README.md",
+              "RelativeToolTip": "CONE_IMPLEMENTATION_README.md",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAOYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-16T02:20:39.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cone3D.cs",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Cone3D.cs",
+              "RelativeDocumentMoniker": "Cone3D.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Cone3D.cs",
+              "RelativeToolTip": "Cone3D.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwCIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T02:19:19.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.cs",
+              "RelativeDocumentMoniker": "Home.cs",
+              "ToolTip": "C:\\Users\\eluce\\codigo\\uni\\computacion_grafica\\Proyecto_COMPGRAFICA\\PROYECTOU2_CCLl\\Home.cs [Design]",
+              "RelativeToolTip": "Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T00:38:40.426Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
