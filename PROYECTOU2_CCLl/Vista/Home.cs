@@ -82,8 +82,7 @@ namespace PROYECTO_U2_CCLl
             {
                 comboMaterial.Items.Add("Wireframe");
                 comboMaterial.Items.Add("Sólido");
-                comboMaterial.Items.Add("Translúcido");
-                comboMaterial.Items.Add("Phong");
+                comboMaterial.Items.Add("Translúcido");                
                 comboMaterial.SelectedIndex = 1; // Por defecto Sólido
                 comboMaterial.SelectedIndexChanged += ComboMaterial_SelectedIndexChanged;
             }
@@ -153,23 +152,29 @@ namespace PROYECTO_U2_CCLl
             }
 
             // Configurar controles de posición
-            if (numXPosicion != null)
+            if (trackXPosicion != null)
             {
-                numXPosicion.Minimum = -500;
-                numXPosicion.Maximum = 500;
-                numXPosicion.ValueChanged += NumPosicion_ValueChanged;
+                trackXPosicion.Minimum = -500;
+                trackXPosicion.Maximum = 500;
+                trackXPosicion.Value = 0;
+                trackXPosicion.TickFrequency = 50;
+                trackXPosicion.ValueChanged += NumPosicion_ValueChanged;
             }
-            if (numYPosicion != null)
+            if (trackYPosicion != null)
             {
-                numYPosicion.Minimum = -500;
-                numYPosicion.Maximum = 500;
-                numYPosicion.ValueChanged += NumPosicion_ValueChanged;
+                trackYPosicion.Minimum = -500;
+                trackYPosicion.Maximum = 500;
+                trackYPosicion.Value = 0;
+                trackYPosicion.TickFrequency = 50;
+                trackYPosicion.ValueChanged += NumPosicion_ValueChanged;
             }
-            if (numZPosicion != null)
+            if (trackZPosicion != null)
             {
-                numZPosicion.Minimum = -500;
-                numZPosicion.Maximum = 500;
-                numZPosicion.ValueChanged += NumPosicion_ValueChanged;
+                trackZPosicion.Minimum = -500;
+                trackZPosicion.Maximum = 500;
+                trackZPosicion.Value = 0;
+                trackZPosicion.TickFrequency = 50;
+                trackZPosicion.ValueChanged += NumPosicion_ValueChanged;
             }
 
             // Configurar trackbars de rotación
@@ -315,7 +320,7 @@ namespace PROYECTO_U2_CCLl
             GL.LineWidth(2f);
             GL.Begin(PrimitiveType.Lines);
             // Eje X rojo
-            GL.Color3(1f, 0f, 0f);
+            GL.Color3(1f, 0.8f, 0f);
             GL.Vertex3(0, 0, 0); GL.Vertex3(80, 0, 0);
             // Eje Y verde
             GL.Color3(0f, 1f, 0f);
@@ -1311,23 +1316,23 @@ namespace PROYECTO_U2_CCLl
             }
 
 
-            if (numXPosicion != null)
+            if (trackXPosicion != null)
             {
-                decimal valX = (decimal)figura.PosX;
-                valX = Math.Max(numXPosicion.Minimum, Math.Min(numXPosicion.Maximum, valX));
-                numXPosicion.Value = valX;
+                int valX = (int)figura.PosX;
+                valX = Math.Max(trackXPosicion.Minimum, Math.Min(trackXPosicion.Maximum, valX));
+                trackXPosicion.Value = valX;
             }
-            if (numYPosicion != null)
+            if (trackYPosicion != null)
             {
-                decimal valY = (decimal)figura.PosY;
-                valY = Math.Max(numYPosicion.Minimum, Math.Min(numYPosicion.Maximum, valY));
-                numYPosicion.Value = valY;
+                int valY = (int)figura.PosY;
+                valY = Math.Max(trackYPosicion.Minimum, Math.Min(trackYPosicion.Maximum, valY));
+                trackYPosicion.Value = valY;
             }
-            if (numZPosicion != null)
+            if (trackZPosicion != null)
             {
-                decimal valZ = (decimal)figura.PosZ;
-                valZ = Math.Max(numZPosicion.Minimum, Math.Min(numZPosicion.Maximum, valZ));
-                numZPosicion.Value = valZ;
+                int valZ = (int)figura.PosZ;
+                valZ = Math.Max(trackZPosicion.Minimum, Math.Min(trackZPosicion.Maximum, valZ));
+                trackZPosicion.Value = valZ;
             }
 
 
@@ -1453,12 +1458,12 @@ namespace PROYECTO_U2_CCLl
             Figura3D figuraActual = renderizador.FiguraSeleccionada();
             if (figuraActual != null)
             {
-                if (numXPosicion != null)
-                    figuraActual.PosX = (float)numXPosicion.Value;
-                if (numYPosicion != null)
-                    figuraActual.PosY = (float)numYPosicion.Value;
-                if (numZPosicion != null)
-                    figuraActual.PosZ = (float)numZPosicion.Value;
+                if (trackXPosicion != null)
+                    figuraActual.PosX = (float)trackXPosicion.Value;
+                if (trackYPosicion != null)
+                    figuraActual.PosY = (float)trackYPosicion.Value;
+                if (trackZPosicion != null)
+                    figuraActual.PosZ = (float)trackZPosicion.Value;
 
                 glControlWindow?.Invalidate();
             }

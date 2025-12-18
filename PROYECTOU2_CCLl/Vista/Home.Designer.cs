@@ -57,6 +57,7 @@
             this.picturePiramide = new System.Windows.Forms.PictureBox();
             this.pnlSliders = new System.Windows.Forms.Panel();
             this.panelTransfo = new System.Windows.Forms.Panel();
+            this.trackXPosicion = new System.Windows.Forms.TrackBar();
             this.trackZESCAL = new System.Windows.Forms.TrackBar();
             this.trackYESCAL = new System.Windows.Forms.TrackBar();
             this.trackXESCAL = new System.Windows.Forms.TrackBar();
@@ -74,13 +75,12 @@
             this.lblZ = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
             this.lblX = new System.Windows.Forms.Label();
-            this.numZPosicion = new System.Windows.Forms.NumericUpDown();
-            this.numYPosicion = new System.Windows.Forms.NumericUpDown();
             this.lblPosicion = new System.Windows.Forms.Label();
-            this.numXPosicion = new System.Windows.Forms.NumericUpDown();
             this.pnlListBox = new System.Windows.Forms.Panel();
             this.boxFiguras = new System.Windows.Forms.ListBox();
             this.glControlWindow = new OpenTK.GLControl();
+            this.trackYPosicion = new System.Windows.Forms.TrackBar();
+            this.trackZPosicion = new System.Windows.Forms.TrackBar();
             this.pnlLayout.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,16 +93,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturePiramide)).BeginInit();
             this.pnlSliders.SuspendLayout();
             this.panelTransfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackXPosicion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackZESCAL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackYESCAL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackXESCAL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackZROT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackYROT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackXROT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numZPosicion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numYPosicion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numXPosicion)).BeginInit();
             this.pnlListBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackYPosicion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackZPosicion)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLayout
@@ -417,6 +417,9 @@
             // panelTransfo
             // 
             this.panelTransfo.BackColor = System.Drawing.Color.Silver;
+            this.panelTransfo.Controls.Add(this.trackZPosicion);
+            this.panelTransfo.Controls.Add(this.trackYPosicion);
+            this.panelTransfo.Controls.Add(this.trackXPosicion);
             this.panelTransfo.Controls.Add(this.trackZESCAL);
             this.panelTransfo.Controls.Add(this.trackYESCAL);
             this.panelTransfo.Controls.Add(this.trackXESCAL);
@@ -434,15 +437,20 @@
             this.panelTransfo.Controls.Add(this.lblZ);
             this.panelTransfo.Controls.Add(this.lblY);
             this.panelTransfo.Controls.Add(this.lblX);
-            this.panelTransfo.Controls.Add(this.numZPosicion);
-            this.panelTransfo.Controls.Add(this.numYPosicion);
             this.panelTransfo.Controls.Add(this.lblPosicion);
-            this.panelTransfo.Controls.Add(this.numXPosicion);
             this.panelTransfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTransfo.Location = new System.Drawing.Point(0, 135);
             this.panelTransfo.Name = "panelTransfo";
             this.panelTransfo.Size = new System.Drawing.Size(166, 342);
             this.panelTransfo.TabIndex = 3;
+            // 
+            // trackXPosicion
+            // 
+            this.trackXPosicion.BackColor = System.Drawing.Color.Silver;
+            this.trackXPosicion.Location = new System.Drawing.Point(50, 25);
+            this.trackXPosicion.Name = "trackXPosicion";
+            this.trackXPosicion.Size = new System.Drawing.Size(104, 45);
+            this.trackXPosicion.TabIndex = 22;
             // 
             // trackZESCAL
             // 
@@ -597,20 +605,6 @@
             this.lblX.TabIndex = 3;
             this.lblX.Text = "X";
             // 
-            // numZPosicion
-            // 
-            this.numZPosicion.Location = new System.Drawing.Point(50, 81);
-            this.numZPosicion.Name = "numZPosicion";
-            this.numZPosicion.Size = new System.Drawing.Size(51, 20);
-            this.numZPosicion.TabIndex = 2;
-            // 
-            // numYPosicion
-            // 
-            this.numYPosicion.Location = new System.Drawing.Point(50, 54);
-            this.numYPosicion.Name = "numYPosicion";
-            this.numYPosicion.Size = new System.Drawing.Size(51, 20);
-            this.numYPosicion.TabIndex = 1;
-            // 
             // lblPosicion
             // 
             this.lblPosicion.AutoSize = true;
@@ -620,13 +614,6 @@
             this.lblPosicion.Size = new System.Drawing.Size(97, 19);
             this.lblPosicion.TabIndex = 0;
             this.lblPosicion.Text = "Translación";
-            // 
-            // numXPosicion
-            // 
-            this.numXPosicion.Location = new System.Drawing.Point(50, 29);
-            this.numXPosicion.Name = "numXPosicion";
-            this.numXPosicion.Size = new System.Drawing.Size(51, 20);
-            this.numXPosicion.TabIndex = 0;
             // 
             // pnlListBox
             // 
@@ -661,6 +648,20 @@
             this.glControlWindow.TabIndex = 5;
             this.glControlWindow.VSync = false;
             // 
+            // trackYPosicion
+            // 
+            this.trackYPosicion.Location = new System.Drawing.Point(50, 53);
+            this.trackYPosicion.Name = "trackYPosicion";
+            this.trackYPosicion.Size = new System.Drawing.Size(104, 45);
+            this.trackYPosicion.TabIndex = 23;
+            // 
+            // trackZPosicion
+            // 
+            this.trackZPosicion.Location = new System.Drawing.Point(50, 82);
+            this.trackZPosicion.Name = "trackZPosicion";
+            this.trackZPosicion.Size = new System.Drawing.Size(104, 45);
+            this.trackZPosicion.TabIndex = 24;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,16 +693,16 @@
             this.pnlSliders.ResumeLayout(false);
             this.panelTransfo.ResumeLayout(false);
             this.panelTransfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackXPosicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackZESCAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackYESCAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackXESCAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackZROT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackYROT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackXROT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numZPosicion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numYPosicion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numXPosicion)).EndInit();
             this.pnlListBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackYPosicion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackZPosicion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,11 +722,8 @@
         private System.Windows.Forms.PictureBox pictureEsfera;
         private System.Windows.Forms.Button btnResetear;
         private System.Windows.Forms.Panel pnlListBox;
-        private System.Windows.Forms.NumericUpDown numXPosicion;
         private System.Windows.Forms.TrackBar trackXROT;
         private System.Windows.Forms.Panel panelTransfo;
-        private System.Windows.Forms.NumericUpDown numZPosicion;
-        private System.Windows.Forms.NumericUpDown numYPosicion;
         private System.Windows.Forms.Label lblPosicion;
         private System.Windows.Forms.Label lblZ;
         private System.Windows.Forms.Label lblY;
@@ -761,6 +759,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar trackXPosicion;
+        private System.Windows.Forms.TrackBar trackZPosicion;
+        private System.Windows.Forms.TrackBar trackYPosicion;
     }
 }
 
