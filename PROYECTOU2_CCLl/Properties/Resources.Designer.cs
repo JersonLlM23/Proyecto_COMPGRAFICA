@@ -113,9 +113,9 @@ namespace PROYECTO_U2_CCLl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imgPrismaRect {
+        internal static System.Drawing.Bitmap imgPrismaPentagonal {
             get {
-                object obj = ResourceManager.GetObject("imgPrismaRect", resourceCulture);
+                object obj = ResourceManager.GetObject("imgPrismaPentagonal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

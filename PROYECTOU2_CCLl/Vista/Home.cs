@@ -18,12 +18,13 @@ namespace PROYECTO_U2_CCLl
     {
         private RenderizadorOpenGL renderizador;
         private Timer timerRender;
-        private float camaraRotX = 20;
-        private float camaraRotY = 20;
-        private float camaraZoom = 1f;
-        private bool arrastrando = false;
-        private Point ultimoMouse;
+        private CamaraController camaraController;
+        private LuzController luzController;
+        private bool arrastrando = false; // Conservado para compatibilidad con otros controles
+        private Point ultimoMouse;        // Conservado para compatibilidad con otros controles
         private bool glCargado = false;
+        private DateTime _ultimoTick;
+        private bool _actualizandoUI = false;
 
         public Home()
         {
@@ -35,6 +36,8 @@ namespace PROYECTO_U2_CCLl
         {
             // Crear el renderizador
             renderizador = new RenderizadorOpenGL();
+            camaraController = new CamaraController();
+            luzController = new LuzController();
 
             // Configurar el GLControl
             if (glControlWindow != null)
@@ -46,13 +49,32 @@ namespace PROYECTO_U2_CCLl
                 glControlWindow.MouseUp += GlControl_MouseUp;
                 glControlWindow.MouseMove += GlControl_MouseMove;
                 glControlWindow.MouseWheel += GlControl_MouseWheel;
+                glControlWindow.KeyDown += GlControlWindow_KeyDown;
+                glControlWindow.KeyUp += GlControlWindow_KeyUp;
+                glControlWindow.PreviewKeyDown += (s, e) =>
+                {
+                    // Asegurar que las flechas sean tratadas como teclas de entrada
+                    if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right ||
+                        e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+                    {
+                        e.IsInputKey = true;
+                    }
+                };
                 glControlWindow.MouseEnter += (s, e) => glControlWindow.Focus();
             }
 
             // Timer para refrescar el render
             timerRender = new Timer();
             timerRender.Interval = 33; // ~30 FPS
-            timerRender.Tick += (s, e) => glControlWindow?.Invalidate();
+            _ultimoTick = DateTime.Now;
+            timerRender.Tick += (s, e) =>
+            {
+                var ahora = DateTime.Now;
+                float dt = (float)(ahora - _ultimoTick).TotalSeconds;
+                _ultimoTick = ahora;
+                camaraController.Update(dt);
+                glControlWindow?.Invalidate();
+            };
             timerRender.Start();
 
             // Configurar combo de materiales
@@ -89,6 +111,38 @@ namespace PROYECTO_U2_CCLl
                 }
                 comboColor.SelectedIndex = 5; // Por defecto Azul
                 comboColor.SelectedIndexChanged += ComboColor_SelectedIndexChanged;
+            }
+
+            // Configurar combo de cámara
+            if (comboCamara != null)
+            {
+                comboCamara.Items.Clear();
+                comboCamara.Items.Add("Orbital");
+                comboCamara.Items.Add("Libre");
+                comboCamara.Items.Add("Fija");
+                comboCamara.SelectedIndex = 0;
+                comboCamara.SelectedIndexChanged += (s, e) =>
+                {
+                    var idx = comboCamara.SelectedIndex;
+                    camaraController.SetTipoCamara((TipoCamara)idx);
+                    glControlWindow?.Invalidate();
+                };
+            }
+
+            // Configurar combo de luz
+            if (comboLuz != null)
+            {
+                comboLuz.Items.Clear();
+                comboLuz.Items.Add("Apagada");
+                comboLuz.Items.Add("Direccional");
+                comboLuz.Items.Add("Puntual");
+                comboLuz.SelectedIndex = 1; // Direccional por defecto
+                comboLuz.SelectedIndexChanged += (s, e) =>
+                {
+                    var idx = comboLuz.SelectedIndex;
+                    luzController.SetTipoLuz((TipoLuz)idx);
+                    glControlWindow?.Invalidate();
+                };
             }
 
             // Configurar lista de figuras
@@ -190,18 +244,8 @@ namespace PROYECTO_U2_CCLl
             GL.Enable(EnableCap.LineSmooth);
             GL.Hint(HintTarget.LineSmoothHint, HintMode.Nicest);
 
-            // Configurar iluminación
-            GL.Enable(EnableCap.Lighting);
-            GL.Enable(EnableCap.Light0);
-            GL.Enable(EnableCap.ColorMaterial);
-            GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
-
-            float[] lightPos = { 5.0f, 5.0f, 5.0f, 1.0f };
-            float[] lightAmbient = { 0.3f, 0.3f, 0.3f, 1.0f };
-            float[] lightDiffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
-            GL.Light(LightName.Light0, LightParameter.Position, lightPos);
-            GL.Light(LightName.Light0, LightParameter.Ambient, lightAmbient);
-            GL.Light(LightName.Light0, LightParameter.Diffuse, lightDiffuse);
+            // Configurar iluminación mediante controlador
+            luzController.ConfigureInitialGL();
         }
 
         private void GlControlWindow_Resize(object sender, EventArgs e)
@@ -227,11 +271,11 @@ namespace PROYECTO_U2_CCLl
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
+            var view = camaraController.GetViewMatrix();
+            GL.LoadMatrix(ref view);
 
-            // Configurar cámara orbital
-            GL.Translate(0, 0, -400 / camaraZoom);
-            GL.Rotate(camaraRotX, 1, 0, 0);
-            GL.Rotate(camaraRotY, 0, 1, 0);
+            // Asegurar estado de luz acorde al modo seleccionado
+            luzController.ApplyToGL();
 
             // Dibujar ejes
             DibujarEjesGL();
@@ -1230,6 +1274,8 @@ namespace PROYECTO_U2_CCLl
         {
             if (figura == null) return;
 
+            _actualizandoUI = true;
+
 
             if (comboMaterial != null)
             {
@@ -1317,63 +1363,54 @@ namespace PROYECTO_U2_CCLl
                 valZ = Math.Max(trackZESCAL.Minimum, Math.Min(trackZESCAL.Maximum, valZ));
                 trackZESCAL.Value = valZ;
             }
+
+            _actualizandoUI = false;
         }
 
         private void btnResetear_Click(object sender, EventArgs e)
         {
             renderizador.Limpiar();
-            camaraRotX = 20f;
-            camaraRotY = 20f;
-            camaraZoom = 1f;
+            camaraController.Reset();
             ActualizarListaFiguras();
             glControlWindow?.Invalidate();
         }
 
         private void GlControl_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                arrastrando = true;
-                ultimoMouse = e.Location;
-            }
+            camaraController.HandleMouseDown(e);
         }
 
         private void GlControl_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                arrastrando = false;
-            }
+            camaraController.HandleMouseUp(e);
         }
 
         private void GlControl_MouseMove(object sender, MouseEventArgs e)
         {
-            if (arrastrando)
-            {
-                int dx = e.X - ultimoMouse.X;
-                int dy = e.Y - ultimoMouse.Y;
-                ultimoMouse = e.Location;
-
-                camaraRotY += dx * 0.5f;
-                camaraRotX += dy * 0.5f;
-                if (camaraRotX > 89f) camaraRotX = 89f;
-                if (camaraRotX < -89f) camaraRotX = -89f;
-                glControlWindow?.Invalidate();
-            }
+            camaraController.HandleMouseMove(e);
+            glControlWindow?.Invalidate();
         }
 
         private void GlControl_MouseWheel(object sender, MouseEventArgs e)
         {
-            // e.Delta: +120 rueda hacia arriba, -120 hacia abajo
-            float factor = (e.Delta > 0) ? 1.1f : 0.9f;
-            camaraZoom *= factor;
-            if (camaraZoom < 0.1f) camaraZoom = 0.1f;
-            if (camaraZoom > 10f) camaraZoom = 10f;
+            camaraController.HandleMouseWheel(e);
             glControlWindow?.Invalidate();
+        }
+
+        private void GlControlWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            camaraController.HandleKeyDown(e.KeyCode);
+            glControlWindow?.Invalidate();
+        }
+
+        private void GlControlWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            camaraController.HandleKeyUp(e.KeyCode);
         }
 
         private void ComboMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_actualizandoUI) return;
             Figura3D figuraActual = renderizador.FiguraSeleccionada();
             if (figuraActual != null && comboMaterial.SelectedIndex >= 0)
             {
@@ -1384,6 +1421,7 @@ namespace PROYECTO_U2_CCLl
 
         private void ComboColor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_actualizandoUI) return;
             if (comboColor.SelectedIndex < 0) return;
 
             var colores = new Color[]
@@ -1411,6 +1449,7 @@ namespace PROYECTO_U2_CCLl
 
         private void NumPosicion_ValueChanged(object sender, EventArgs e)
         {
+            if (_actualizandoUI) return;
             Figura3D figuraActual = renderizador.FiguraSeleccionada();
             if (figuraActual != null)
             {
@@ -1427,6 +1466,7 @@ namespace PROYECTO_U2_CCLl
 
         private void TrackRotacion_ValueChanged(object sender, EventArgs e)
         {
+            if (_actualizandoUI) return;
             Figura3D figuraActual = renderizador.FiguraSeleccionada();
             if (figuraActual != null)
             {
@@ -1456,6 +1496,7 @@ namespace PROYECTO_U2_CCLl
 
         private void TrackEscala_ValueChanged(object sender, EventArgs e)
         {
+            if (_actualizandoUI) return;
             Figura3D figuraActual = renderizador.FiguraSeleccionada();
             if (figuraActual != null)
             {
@@ -1541,6 +1582,10 @@ namespace PROYECTO_U2_CCLl
         {
 
             this.WindowState = FormWindowState.Maximized;
+            this.KeyPreview = true;
+            this.KeyDown += (s, ev) => { camaraController.HandleKeyDown(ev.KeyCode); glControlWindow?.Invalidate(); };
+            this.KeyUp += (s, ev) => { camaraController.HandleKeyUp(ev.KeyCode); };
+            glControlWindow?.Focus();
         }
     }
 }

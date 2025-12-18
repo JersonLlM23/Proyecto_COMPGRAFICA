@@ -121,9 +121,6 @@
   <data name="imgCono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgPrismaRect" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgPrismaRect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconCubo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconCubo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,5 +132,8 @@
   </data>
   <data name="imgEsfera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgEsfera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgPrismaPentagonal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgPrismaPentagonal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
