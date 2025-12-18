@@ -273,13 +273,11 @@ namespace PROYECTO_U2_CCLl
             GL.LoadIdentity();
             var view = camaraController.GetViewMatrix();
             GL.LoadMatrix(ref view);
-
             // Asegurar estado de luz acorde al modo seleccionado
             luzController.ApplyToGL();
 
             // Dibujar ejes
             DibujarEjesGL();
-
             // Dibujar figuras
             foreach (var figura in renderizador.ObtenerFiguras())
             {
@@ -529,7 +527,8 @@ namespace PROYECTO_U2_CCLl
 
         private void DibujarConoGL(Figura3D figura, Cono cono)
         {
-            float radio = cono.Radio * figura.EscalaX;
+            float radioX = cono.Radio * figura.EscalaX;
+            float radioZ = cono.Radio * figura.EscalaZ;
             float altura = cono.Altura * figura.EscalaY;
             int segmentos = cono.Segmentos;
 
@@ -540,8 +539,8 @@ namespace PROYECTO_U2_CCLl
             for (int i = 0; i < segmentos; i++)
             {
                 float angle = MathHelper.DegreesToRadians(i * angleStep);
-                float x = radio * (float)Math.Cos(angle);
-                float z = radio * (float)Math.Sin(angle);
+                float x = radioX * (float)Math.Cos(angle);
+                float z = radioZ * (float)Math.Sin(angle);
                 verticesBase[i] = new Vector3(x, 0, z);
             }
 
@@ -649,7 +648,8 @@ namespace PROYECTO_U2_CCLl
 
         private void DibujarCilindroGL(Figura3D figura, Cilindro cilindro)
         {
-            float radio = cilindro.Radio * figura.EscalaX;
+            float radioX = cilindro.Radio * figura.EscalaX;
+            float radioZ = cilindro.Radio * figura.EscalaZ;
             float altura = cilindro.Altura * figura.EscalaY;
             int segmentos = cilindro.Segmentos;
 
@@ -661,8 +661,8 @@ namespace PROYECTO_U2_CCLl
             for (int i = 0; i < segmentos; i++)
             {
                 float angle = MathHelper.DegreesToRadians(i * angleStep);
-                float x = radio * (float)Math.Cos(angle);
-                float z = radio * (float)Math.Sin(angle);
+                float x = radioX * (float)Math.Cos(angle);
+                float z = radioZ * (float)Math.Sin(angle);
                 verticesInferior[i] = new Vector3(x, 0, z);
                 verticesSuperior[i] = new Vector3(x, altura, z);
             }

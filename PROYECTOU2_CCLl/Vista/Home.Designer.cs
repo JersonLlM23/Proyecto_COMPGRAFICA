@@ -41,6 +41,12 @@
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.lblColor = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCubo = new System.Windows.Forms.Label();
+            this.lblPiramide = new System.Windows.Forms.Label();
             this.btnResetear = new System.Windows.Forms.Button();
             this.lblFiguras = new System.Windows.Forms.Label();
             this.pictureEsfera = new System.Windows.Forms.PictureBox();
@@ -75,12 +81,6 @@
             this.pnlListBox = new System.Windows.Forms.Panel();
             this.boxFiguras = new System.Windows.Forms.ListBox();
             this.glControlWindow = new OpenTK.GLControl();
-            this.lblPiramide = new System.Windows.Forms.Label();
-            this.lblCubo = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.pnlLayout.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -248,6 +248,60 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(117, 477);
             this.pnlLeft.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(66, 269);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 14);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Esfera";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 269);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 14);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Prisma";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(62, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 14);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Cilindro";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 14);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Cono";
+            // 
+            // lblCubo
+            // 
+            this.lblCubo.AutoSize = true;
+            this.lblCubo.Location = new System.Drawing.Point(63, 91);
+            this.lblCubo.Name = "lblCubo";
+            this.lblCubo.Size = new System.Drawing.Size(34, 14);
+            this.lblCubo.TabIndex = 16;
+            this.lblCubo.Text = "Cubo";
+            // 
+            // lblPiramide
+            // 
+            this.lblPiramide.AutoSize = true;
+            this.lblPiramide.Location = new System.Drawing.Point(3, 91);
+            this.lblPiramide.Name = "lblPiramide";
+            this.lblPiramide.Size = new System.Drawing.Size(54, 14);
+            this.lblPiramide.TabIndex = 15;
+            this.lblPiramide.Text = "Pirámide";
             // 
             // btnResetear
             // 
@@ -606,60 +660,6 @@
             this.glControlWindow.Size = new System.Drawing.Size(826, 477);
             this.glControlWindow.TabIndex = 5;
             this.glControlWindow.VSync = false;
-            // 
-            // lblPiramide
-            // 
-            this.lblPiramide.AutoSize = true;
-            this.lblPiramide.Location = new System.Drawing.Point(3, 91);
-            this.lblPiramide.Name = "lblPiramide";
-            this.lblPiramide.Size = new System.Drawing.Size(54, 14);
-            this.lblPiramide.TabIndex = 15;
-            this.lblPiramide.Text = "Pirámide";
-            // 
-            // lblCubo
-            // 
-            this.lblCubo.AutoSize = true;
-            this.lblCubo.Location = new System.Drawing.Point(63, 91);
-            this.lblCubo.Name = "lblCubo";
-            this.lblCubo.Size = new System.Drawing.Size(34, 14);
-            this.lblCubo.TabIndex = 16;
-            this.lblCubo.Text = "Cubo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 14);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Cono";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(62, 178);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 14);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Cilindro";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 269);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 14);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Prisma";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(66, 269);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 14);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Esfera";
             // 
             // Home
             // 

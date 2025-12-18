@@ -120,13 +120,7 @@
     <None Include="Resources\imgCilindro.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imgPrismaRect.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\imgEsfera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blobid0.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgPrismaPentagonal.png" />
